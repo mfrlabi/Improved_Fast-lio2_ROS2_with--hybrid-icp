@@ -26,7 +26,7 @@ Terminal 2 (bag)
     source ~/ros2_ws/install/setup.bash
 
     mkdir -p ~/fastlio_eval
-    cd ~/fastlio_output
+    cd ~/fastlio2_output
 
     
     python3 - <<'PY'
