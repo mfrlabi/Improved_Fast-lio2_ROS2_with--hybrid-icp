@@ -2,7 +2,7 @@ source /opt/ros/jazzy/setup.bash
 source ~/ros2_ws/install/setup.bash
 
 mkdir -p ~/fastlio_eval
-cd ~/fastlio_eval
+cd ~/fastlio_output
 
 python3 - <<'PY'
 import os
