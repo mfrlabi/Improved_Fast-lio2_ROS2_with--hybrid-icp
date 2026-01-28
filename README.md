@@ -17,6 +17,15 @@ Terminal 2 (bag)
     source ~/ros2_ws/install/setup.bash
     ros2 bag play ~/ws_livox/bags/3_Senario-2/d/combined.mcap/combined.mcap_0.mcap --clock
 
+
+if you rebuild 
+
+    cd ~/ros2_ws
+    source /opt/ros/jazzy/setup.bash
+    rm -rf build install log
+    colcon build --symlink-install 
+    source install/setup.bash
+
  
  Terminal 3 — Paste the Python exporter (THIS ONE)
 
