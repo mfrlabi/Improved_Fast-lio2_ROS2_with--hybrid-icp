@@ -24,6 +24,10 @@ if you rebuild
     source /opt/ros/jazzy/setup.bash
     rm -rf build install log
     colcon build --symlink-install 
+    
+or 
+
+    colcon build --packages-select FAST_LIO_ROS2
     source install/setup.bash
 
  
