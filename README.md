@@ -43,6 +43,7 @@ or
 
     
     cd ~/fastlio2_output
+    
     python3 - <<'PY'
     import os
     import rclpy
@@ -60,16 +61,16 @@ or
             self.get_logger().info(f"Subscribing to /Odometry and writing TUM to: {OUT_PATH}")
 
         def cb(self, msg: Odometry):
-        t = msg.header.stamp.sec + msg.header.stamp.nanosec * 1e-9
-        p = msg.pose.pose.position
-        q = msg.pose.pose.orientation
-        self.out.write(
-            f"{t:.9f} {p.x:.6f} {p.y:.6f} {p.z:.6f} "
-            f"{q.x:.6f} {q.y:.6f} {q.z:.6f} {q.w:.6f}\n"
-        )
-        self.count += 1
-        if self.count % 200 == 0:
-            self.get_logger().info(f"Wrote {self.count} poses...")
+            t = msg.header.stamp.sec + msg.header.stamp.nanosec * 1e-9
+            p = msg.pose.pose.position
+            q = msg.pose.pose.orientation
+            self.out.write(
+                f"{t:.9f} {p.x:.6f} {p.y:.6f} {p.z:.6f} "
+                f"{q.x:.6f} {q.y:.6f} {q.z:.6f} {q.w:.6f}\n"
+            )
+            self.count += 1
+            if self.count % 200 == 0:
+                self.get_logger().info(f"Wrote {self.count} poses...")
 
     def main():
         rclpy.init()
@@ -79,10 +80,10 @@ or
         except KeyboardInterrupt:
             pass
         node.get_logger().info(f"Stopping. Total poses written: {node.count}")
-        node.out.close()
+       node.out.close()
         node.destroy_node()
         rclpy.shutdown()
 
     if __name__ == "__main__":
-    main()
+        main()
     PY
