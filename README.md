@@ -59,7 +59,7 @@ or
             self.sub = self.create_subscription(Odometry, '/Odometry', self.cb, 50)
             self.get_logger().info(f"Subscribing to /Odometry and writing TUM to: {OUT_PATH}")
 
-    def cb(self, msg: Odometry):
+        def cb(self, msg: Odometry):
         t = msg.header.stamp.sec + msg.header.stamp.nanosec * 1e-9
         p = msg.pose.pose.position
         q = msg.pose.pose.orientation
