@@ -1,5 +1,5 @@
 # After running your SLAM system
-cd ~/ros2_ws/src/FAST_LIO/Log
+cd ~/ros2_ws/src/FAST_LIO_ROS2/Log
 
 # Create Python script to analyze alphas
 python3 -c "
